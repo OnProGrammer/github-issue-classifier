@@ -1,0 +1,35 @@
+repo: "kubernetes/kubernetes"
+data_dir: "data"
+targets:
+  - BUG
+  - FEATURE
+  - DOCS
+  - SUPPORT
+
+start_page: 1
+num_pages: 10
+
+# Proxy URLs — leave empty for direct connections
+proxies: []
+#  - "http://user:pass@host1:port"
+#  - "http://user:pass@host2:port"
+
+# Proxy pool settings
+proxy_ban_threshold: 5        # consecutive failures before ban
+proxy_ban_duration_sec: 300    # initial ban duration (escalates x2)
+proxy_cooldown_sec: 2.0        # min interval between uses of same proxy
+
+# Retry settings
+retry_max: 4
+retry_base_delay_sec: 2.0     # exponential backoff base
+retry_max_delay_sec: 60.0
+
+# Rate limiting — random delay between requests
+rate_limit_min_sec: 1.0
+rate_limit_max_sec: 3.0
+
+request_timeout_sec: 30.0
+
+# Logging
+log_level: "INFO"       # DEBUG | INFO | WARNING | ERROR
+log_json: false          # true for structured JSON logs (prod/monitoring)
